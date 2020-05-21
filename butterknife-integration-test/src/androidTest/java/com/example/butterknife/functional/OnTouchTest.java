@@ -193,7 +193,7 @@ public final class OnTouchTest {
   }
 
   static final class ArgumentCast {
-    interface MyInterface {}
+    interface MyInterface { }
 
     View last;
 

@@ -187,7 +187,7 @@ public final class OnClickTest {
   }
 
   static final class ArgumentCast {
-    interface MyInterface {}
+    interface MyInterface { }
 
     View last;
 

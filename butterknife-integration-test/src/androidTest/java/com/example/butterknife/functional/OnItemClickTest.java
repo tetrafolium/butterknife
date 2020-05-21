@@ -213,7 +213,7 @@ public final class OnItemClickTest {
     }
 
     static final class ArgumentCast {
-        interface MyInterface {}
+        interface MyInterface { }
 
         View last;
 

@@ -66,7 +66,7 @@ public final class BindColorTest {
         + "import butterknife.BindColor;\n"
         + "public class Test {\n"
         + "  @BindColor(1) ColorStateList one;\n"
-        +"}"
+        + "}"
     );
 
     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""

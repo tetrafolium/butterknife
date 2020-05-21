@@ -392,7 +392,7 @@ public class BindViewsTest {
         .processedWith(new ButterKnifeProcessor())
         .compilesWithoutWarnings()
         .and()
-        .generatesSources( bindingSource);
+        .generatesSources(bindingSource);
   }
 
   @Test public void failsIfNoIds() {

@@ -187,7 +187,7 @@ public final class OnCheckedChangedTest {
   }
 
   static final class ArgumentCast {
-    interface MyInterface {}
+    interface MyInterface { }
 
     View last;
 

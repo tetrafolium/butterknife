@@ -259,8 +259,8 @@ public class RClassTest {
         + "  @UiThread\n"
         + "  public Test_ViewBinding(Test target, View source) {\n"
         + "    this.target = target;\n"
-        + "    target.one = Utils.findRequiredViewAsType(source, R.id.res, \"field 'one'\", " +
-        "CustomView.class);\n"
+        + "    target.one = Utils.findRequiredViewAsType(source, R.id.res, \"field 'one'\", "
+        + "CustomView.class);\n"
         + "  }\n\n"
         + "  @Override\n"
         + "  @CallSuper\n"
