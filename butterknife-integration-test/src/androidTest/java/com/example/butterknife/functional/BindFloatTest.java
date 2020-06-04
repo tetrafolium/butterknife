@@ -13,22 +13,22 @@ import com.example.butterknife.test.R;
 import org.junit.Test;
 
 public final class BindFloatTest {
-  private final Context context = InstrumentationRegistry.getContext();
-  private final View tree = ViewTree.create(1);
+private final Context context = InstrumentationRegistry.getContext();
+private final View tree = ViewTree.create(1);
 
-  static class Target { @BindFloat(R.dimen.twelve_point_two) float actual; }
+static class Target { @BindFloat(R.dimen.twelve_point_two) float actual; }
 
-  @Test
-  public void asFloat() {
-    Target target = new Target();
-    TypedValue value = new TypedValue();
-    context.getResources().getValue(R.dimen.twelve_point_two, value, true);
-    float expected = value.getFloat();
+@Test
+public void asFloat() {
+	Target target = new Target();
+	TypedValue value = new TypedValue();
+	context.getResources().getValue(R.dimen.twelve_point_two, value, true);
+	float expected = value.getFloat();
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual).isEqualTo(expected);
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual).isEqualTo(expected);
 
-    unbinder.unbind();
-    assertThat(target.actual).isEqualTo(expected);
-  }
+	unbinder.unbind();
+	assertThat(target.actual).isEqualTo(expected);
+}
 }

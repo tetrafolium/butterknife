@@ -13,22 +13,22 @@ import com.example.butterknife.test.R;
 import org.junit.Test;
 
 public final class BindDrawableTest {
-  private final Context context = InstrumentationRegistry.getContext();
-  private final View tree = ViewTree.create(1);
+private final Context context = InstrumentationRegistry.getContext();
+private final View tree = ViewTree.create(1);
 
-  static class Target { @BindDrawable(R.drawable.circle) Drawable actual; }
+static class Target { @BindDrawable(R.drawable.circle) Drawable actual; }
 
-  @Test
-  public void asDrawable() {
-    Target target = new Target();
-    Drawable expected = context.getResources().getDrawable(R.drawable.circle);
+@Test
+public void asDrawable() {
+	Target target = new Target();
+	Drawable expected = context.getResources().getDrawable(R.drawable.circle);
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual.getConstantState())
-        .isEqualTo(expected.getConstantState());
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual.getConstantState())
+	.isEqualTo(expected.getConstantState());
 
-    unbinder.unbind();
-    assertThat(target.actual.getConstantState())
-        .isEqualTo(expected.getConstantState());
-  }
+	unbinder.unbind();
+	assertThat(target.actual.getConstantState())
+	.isEqualTo(expected.getConstantState());
+}
 }

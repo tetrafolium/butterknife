@@ -32,9 +32,11 @@ import java.lang.annotation.Target;
                setter = "setOnCheckedChangeListener",
                type = "android.widget.CompoundButton.OnCheckedChangeListener",
                method = @ListenerMethod(
-                   name = "onCheckedChanged",
-                   parameters = {"android.widget.CompoundButton", "boolean"}))
+		       name = "onCheckedChanged",
+		       parameters = {"android.widget.CompoundButton", "boolean"}))
 public @interface OnCheckedChanged {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default {View.NO_ID};
+/** View IDs to which the method will be bound. */
+@IdRes int[] value() default {
+	View.NO_ID
+};
 }

@@ -9,22 +9,22 @@ import butterknife.ButterKnife;
 import org.junit.Test;
 
 public final class BindBoolFailureTest {
-  private final View tree = ViewTree.create(1);
+private final View tree = ViewTree.create(1);
 
-  static class Target { @BindBool(1) String actual; }
+static class Target { @BindBool(1) String actual; }
 
-  @Test
-  public void typeMustBeBool() {
-    Target target = new Target();
+@Test
+public void typeMustBeBool() {
+	Target target = new Target();
 
-    try {
-      ButterKnife.bind(target, tree);
-      fail();
-    } catch (IllegalStateException e) {
-      assertThat(e).hasMessageThat().isEqualTo(
-          "@BindBool field type must be 'boolean'. "
-          +
-          "(com.example.butterknife.functional.BindBoolFailureTest$Target.actual)");
-    }
-  }
+	try {
+		ButterKnife.bind(target, tree);
+		fail();
+	} catch (IllegalStateException e) {
+		assertThat(e).hasMessageThat().isEqualTo(
+			"@BindBool field type must be 'boolean'. "
+			+
+			"(com.example.butterknife.functional.BindBoolFailureTest$Target.actual)");
+	}
+}
 }

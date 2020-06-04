@@ -13,37 +13,37 @@ import com.example.butterknife.test.R;
 import org.junit.Test;
 
 public final class BindColorTest {
-  private final Context context = InstrumentationRegistry.getContext();
-  private final View tree = ViewTree.create(1);
+private final Context context = InstrumentationRegistry.getContext();
+private final View tree = ViewTree.create(1);
 
-  static class IntTarget { @BindColor(R.color.red) int actual; }
+static class IntTarget { @BindColor(R.color.red) int actual; }
 
-  @Test
-  public void asInt() {
-    IntTarget target = new IntTarget();
-    int expected = context.getResources().getColor(R.color.red);
+@Test
+public void asInt() {
+	IntTarget target = new IntTarget();
+	int expected = context.getResources().getColor(R.color.red);
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual).isEqualTo(expected);
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual).isEqualTo(expected);
 
-    unbinder.unbind();
-    assertThat(target.actual).isEqualTo(expected);
-  }
+	unbinder.unbind();
+	assertThat(target.actual).isEqualTo(expected);
+}
 
-  static class ColorStateListTarget {
-    @BindColor(R.color.colors) ColorStateList actual;
-  }
+static class ColorStateListTarget {
+@BindColor(R.color.colors) ColorStateList actual;
+}
 
-  @Test
-  public void asColorStateList() {
-    ColorStateListTarget target = new ColorStateListTarget();
-    ColorStateList expected =
-        context.getResources().getColorStateList(R.color.colors);
+@Test
+public void asColorStateList() {
+	ColorStateListTarget target = new ColorStateListTarget();
+	ColorStateList expected =
+		context.getResources().getColorStateList(R.color.colors);
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual.toString()).isEqualTo(expected.toString());
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual.toString()).isEqualTo(expected.toString());
 
-    unbinder.unbind();
-    assertThat(target.actual.toString()).isEqualTo(expected.toString());
-  }
+	unbinder.unbind();
+	assertThat(target.actual.toString()).isEqualTo(expected.toString());
+}
 }

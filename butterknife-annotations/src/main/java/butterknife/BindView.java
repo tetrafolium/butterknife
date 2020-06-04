@@ -16,6 +16,6 @@ import java.lang.annotation.Target;
 @Retention(RUNTIME)
 @Target(FIELD)
 public @interface BindView {
-  /** View ID to which the field will be bound. */
-  @IdRes int value();
+/** View ID to which the field will be bound. */
+@IdRes int value();
 }

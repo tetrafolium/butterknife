@@ -30,14 +30,16 @@ import java.lang.annotation.Target;
 @Target(METHOD)
 @Retention(RUNTIME)
 @ListenerClass(
-    targetType = "android.widget.AdapterView<?>",
-    setter = "setOnItemLongClickListener",
-    type = "android.widget.AdapterView.OnItemLongClickListener",
-    method = @ListenerMethod(name = "onItemLongClick",
-                             parameters = {"android.widget.AdapterView<?>",
-                                           "android.view.View", "int", "long"},
-                             returnType = "boolean", defaultReturn = "true"))
+	targetType = "android.widget.AdapterView<?>",
+	setter = "setOnItemLongClickListener",
+	type = "android.widget.AdapterView.OnItemLongClickListener",
+	method = @ListenerMethod(name = "onItemLongClick",
+	                         parameters = {"android.widget.AdapterView<?>",
+	                                       "android.view.View", "int", "long"},
+	                         returnType = "boolean", defaultReturn = "true"))
 public @interface OnItemLongClick {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default {View.NO_ID};
+/** View IDs to which the method will be bound. */
+@IdRes int[] value() default {
+	View.NO_ID
+};
 }

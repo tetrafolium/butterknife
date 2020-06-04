@@ -19,6 +19,6 @@ import java.lang.annotation.Target;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindColor {
-  /** Color resource ID to which the field will be bound. */
-  @ColorRes int value();
+/** Color resource ID to which the field will be bound. */
+@ColorRes int value();
 }

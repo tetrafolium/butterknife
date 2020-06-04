@@ -31,6 +31,8 @@ import java.lang.annotation.Target;
                method = @ListenerMethod(name = "doClick",
                                         parameters = "android.view.View"))
 public @interface OnClick {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default {View.NO_ID};
+/** View IDs to which the method will be bound. */
+@IdRes int[] value() default {
+	View.NO_ID
+};
 }

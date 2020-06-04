@@ -9,22 +9,22 @@ import butterknife.ButterKnife;
 import org.junit.Test;
 
 public final class BindDrawableFailureTest {
-  private final View tree = ViewTree.create(1);
+private final View tree = ViewTree.create(1);
 
-  static class Target { @BindDrawable(1) String actual; }
+static class Target { @BindDrawable(1) String actual; }
 
-  @Test
-  public void typeMustBeDrawable() {
-    Target target = new Target();
+@Test
+public void typeMustBeDrawable() {
+	Target target = new Target();
 
-    try {
-      ButterKnife.bind(target, tree);
-      fail();
-    } catch (IllegalStateException e) {
-      assertThat(e).hasMessageThat().isEqualTo(
-          "@BindDrawable field type must be 'Drawable'. "
-          +
-          "(com.example.butterknife.functional.BindDrawableFailureTest$Target.actual)");
-    }
-  }
+	try {
+		ButterKnife.bind(target, tree);
+		fail();
+	} catch (IllegalStateException e) {
+		assertThat(e).hasMessageThat().isEqualTo(
+			"@BindDrawable field type must be 'Drawable'. "
+			+
+			"(com.example.butterknife.functional.BindDrawableFailureTest$Target.actual)");
+	}
+}
 }

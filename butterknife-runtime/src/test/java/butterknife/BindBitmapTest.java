@@ -9,23 +9,23 @@ import javax.tools.JavaFileObject;
 import org.junit.Test;
 
 public final class BindBitmapTest {
-  @Test
-  public void typeMustBeBitmap() {
-    JavaFileObject source = JavaFileObjects.forSourceString(
-        "test.Test", ""
-                         + "package test;\n"
-                         + "import butterknife.BindBitmap;\n"
-                         + "public class Test {\n"
-                         + "  @BindBitmap(1) String one;\n"
-                         + "}");
+@Test
+public void typeMustBeBitmap() {
+	JavaFileObject source = JavaFileObjects.forSourceString(
+		"test.Test", ""
+		+ "package test;\n"
+		+ "import butterknife.BindBitmap;\n"
+		+ "public class Test {\n"
+		+ "  @BindBitmap(1) String one;\n"
+		+ "}");
 
-    assertAbout(javaSource())
-        .that(source)
-        .processedWith(new ButterKnifeProcessor())
-        .failsToCompile()
-        .withErrorContaining(
-            "@BindBitmap field type must be 'Bitmap'. (test.Test.one)")
-        .in(source)
-        .onLine(4);
-  }
+	assertAbout(javaSource())
+	.that(source)
+	.processedWith(new ButterKnifeProcessor())
+	.failsToCompile()
+	.withErrorContaining(
+		"@BindBitmap field type must be 'Bitmap'. (test.Test.one)")
+	.in(source)
+	.onLine(4);
+}
 }

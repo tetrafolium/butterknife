@@ -17,40 +17,40 @@ import org.junit.Test;
 
 @SdkSuppress(minSdkVersion = 24) // AndroidX problems on earlier versions
 public final class BindFontTest {
-  private final Context context = InstrumentationRegistry.getContext();
-  private final View tree = ViewTree.create(1);
+private final Context context = InstrumentationRegistry.getContext();
+private final View tree = ViewTree.create(1);
 
-  static class TargetTypeface {
-    @BindFont(R.font.inconsolata_regular) Typeface actual;
-  }
+static class TargetTypeface {
+@BindFont(R.font.inconsolata_regular) Typeface actual;
+}
 
-  @Test
-  public void typeface() {
-    TargetTypeface target = new TargetTypeface();
-    Typeface expected =
-        ResourcesCompat.getFont(context, R.font.inconsolata_regular);
+@Test
+public void typeface() {
+	TargetTypeface target = new TargetTypeface();
+	Typeface expected =
+		ResourcesCompat.getFont(context, R.font.inconsolata_regular);
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual).isSameAs(expected);
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual).isSameAs(expected);
 
-    unbinder.unbind();
-    assertThat(target.actual).isSameAs(expected);
-  }
+	unbinder.unbind();
+	assertThat(target.actual).isSameAs(expected);
+}
 
-  static class TargetStyle {
-    @BindFont(value = R.font.inconsolata_regular, style = BOLD) Typeface actual;
-  }
+static class TargetStyle {
+@BindFont(value = R.font.inconsolata_regular, style = BOLD) Typeface actual;
+}
 
-  @Test
-  public void style() {
-    TargetStyle target = new TargetStyle();
-    Typeface expected = Typeface.create(
-        ResourcesCompat.getFont(context, R.font.inconsolata_regular), BOLD);
+@Test
+public void style() {
+	TargetStyle target = new TargetStyle();
+	Typeface expected = Typeface.create(
+		ResourcesCompat.getFont(context, R.font.inconsolata_regular), BOLD);
 
-    Unbinder unbinder = ButterKnife.bind(target, tree);
-    assertThat(target.actual).isSameAs(expected);
+	Unbinder unbinder = ButterKnife.bind(target, tree);
+	assertThat(target.actual).isSameAs(expected);
 
-    unbinder.unbind();
-    assertThat(target.actual).isSameAs(expected);
-  }
+	unbinder.unbind();
+	assertThat(target.actual).isSameAs(expected);
+}
 }

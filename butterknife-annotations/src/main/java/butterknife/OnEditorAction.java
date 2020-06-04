@@ -30,14 +30,16 @@ import java.lang.annotation.Target;
 @Target(METHOD)
 @Retention(RUNTIME)
 @ListenerClass(
-    targetType = "android.widget.TextView",
-    setter = "setOnEditorActionListener",
-    type = "android.widget.TextView.OnEditorActionListener",
-    method = @ListenerMethod(name = "onEditorAction",
-                             parameters = {"android.widget.TextView", "int",
-                                           "android.view.KeyEvent"},
-                             returnType = "boolean", defaultReturn = "true"))
+	targetType = "android.widget.TextView",
+	setter = "setOnEditorActionListener",
+	type = "android.widget.TextView.OnEditorActionListener",
+	method = @ListenerMethod(name = "onEditorAction",
+	                         parameters = {"android.widget.TextView", "int",
+	                                       "android.view.KeyEvent"},
+	                         returnType = "boolean", defaultReturn = "true"))
 public @interface OnEditorAction {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default {View.NO_ID};
+/** View IDs to which the method will be bound. */
+@IdRes int[] value() default {
+	View.NO_ID
+};
 }

@@ -11,13 +11,13 @@ import java.util.List;
  */
 public class LintRegistry extends IssueRegistry {
 
-  @Override
-  public List<Issue> getIssues() {
-    return ImmutableList.of(InvalidR2UsageDetector.ISSUE);
-  }
+@Override
+public List<Issue> getIssues() {
+	return ImmutableList.of(InvalidR2UsageDetector.ISSUE);
+}
 
-  @Override
-  public int getApi() {
-    return ApiKt.CURRENT_API;
-  }
+@Override
+public int getApi() {
+	return ApiKt.CURRENT_API;
+}
 }

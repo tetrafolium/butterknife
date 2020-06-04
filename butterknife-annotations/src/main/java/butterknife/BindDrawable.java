@@ -21,9 +21,9 @@ import java.lang.annotation.Target;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindDrawable {
-  /** Drawable resource ID to which the field will be bound. */
-  @DrawableRes int value();
+/** Drawable resource ID to which the field will be bound. */
+@DrawableRes int value();
 
-  /** Color attribute resource ID that is used to tint the drawable. */
-  @AttrRes int tint() default NO_RES_ID;
+/** Color attribute resource ID that is used to tint the drawable. */
+@AttrRes int tint() default NO_RES_ID;
 }

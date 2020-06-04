@@ -8,19 +8,19 @@ import android.view.View;
  * for that frame.
  */
 public abstract class DebouncingOnClickListener
-    implements View.OnClickListener {
-  static boolean enabled = true;
+	implements View.OnClickListener {
+static boolean enabled = true;
 
-  private static final Runnable ENABLE_AGAIN = () -> enabled = true;
+private static final Runnable ENABLE_AGAIN = ()->enabled = true;
 
-  @Override
-  public final void onClick(View v) {
-    if (enabled) {
-      enabled = false;
-      v.post(ENABLE_AGAIN);
-      doClick(v);
-    }
-  }
+@Override
+public final void onClick(View v) {
+	if (enabled) {
+		enabled = false;
+		v.post(ENABLE_AGAIN);
+		doClick(v);
+	}
+}
 
-  public abstract void doClick(View v);
+public abstract void doClick(View v);
 }

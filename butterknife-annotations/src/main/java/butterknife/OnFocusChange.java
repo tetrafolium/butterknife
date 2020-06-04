@@ -28,11 +28,13 @@ import java.lang.annotation.Target;
 @Target(METHOD)
 @Retention(RUNTIME)
 @ListenerClass(
-    targetType = "android.view.View", setter = "setOnFocusChangeListener",
-    type = "android.view.View.OnFocusChangeListener",
-    method = @ListenerMethod(name = "onFocusChange",
-                             parameters = {"android.view.View", "boolean"}))
+	targetType = "android.view.View", setter = "setOnFocusChangeListener",
+	type = "android.view.View.OnFocusChangeListener",
+	method = @ListenerMethod(name = "onFocusChange",
+	                         parameters = {"android.view.View", "boolean"}))
 public @interface OnFocusChange {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default {View.NO_ID};
+/** View IDs to which the method will be bound. */
+@IdRes int[] value() default {
+	View.NO_ID
+};
 }

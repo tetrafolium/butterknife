@@ -9,22 +9,22 @@ import butterknife.ButterKnife;
 import org.junit.Test;
 
 public final class BindAnimFailureTest {
-  private final View tree = ViewTree.create(1);
+private final View tree = ViewTree.create(1);
 
-  static class Target { @BindAnim(1) String actual; }
+static class Target { @BindAnim(1) String actual; }
 
-  @Test
-  public void typeMustBeAnimation() {
-    Target target = new Target();
+@Test
+public void typeMustBeAnimation() {
+	Target target = new Target();
 
-    try {
-      ButterKnife.bind(target, tree);
-      fail();
-    } catch (IllegalStateException e) {
-      assertThat(e).hasMessageThat().isEqualTo(
-          "@BindAnim field type must be 'Animation'. "
-          +
-          "(com.example.butterknife.functional.BindAnimFailureTest$Target.actual)");
-    }
-  }
+	try {
+		ButterKnife.bind(target, tree);
+		fail();
+	} catch (IllegalStateException e) {
+		assertThat(e).hasMessageThat().isEqualTo(
+			"@BindAnim field type must be 'Animation'. "
+			+
+			"(com.example.butterknife.functional.BindAnimFailureTest$Target.actual)");
+	}
+}
 }

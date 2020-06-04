@@ -16,6 +16,6 @@ import java.lang.annotation.Target;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindInt {
-  /** Integer resource ID to which the field will be bound. */
-  @IntegerRes int value();
+/** Integer resource ID to which the field will be bound. */
+@IntegerRes int value();
 }
