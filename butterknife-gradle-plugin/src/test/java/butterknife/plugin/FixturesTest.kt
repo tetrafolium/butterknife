@@ -1,14 +1,13 @@
 package butterknife.plugin
 
 import com.google.common.truth.Truth.assertThat
+import java.io.File
 import org.gradle.testkit.runner.GradleRunner
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
-import java.io.File
-
 
 @RunWith(Parameterized::class)
 class FixturesTest(val fixtureRoot: File, val name: String) {

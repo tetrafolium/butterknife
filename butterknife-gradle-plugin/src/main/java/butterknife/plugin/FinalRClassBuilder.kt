@@ -10,7 +10,6 @@ import javax.lang.model.element.Modifier.FINAL
 import javax.lang.model.element.Modifier.PUBLIC
 import javax.lang.model.element.Modifier.STATIC
 
-
 private const val ANNOTATION_PACKAGE = "androidx.annotation"
 internal val SUPPORTED_TYPES = setOf("anim", "array", "attr", "bool", "color", "dimen",
     "drawable", "id", "integer", "layout", "menu", "plurals", "string", "style", "styleable")
@@ -20,8 +19,8 @@ internal val SUPPORTED_TYPES = setOf("anim", "array", "attr", "bool", "color", "
  * Also enables adding support annotations to indicate the type of resource for every field.
  */
 class FinalRClassBuilder(
-  private val packageName: String,
-  private val className: String
+    private val packageName: String,
+    private val className: String
 ) {
 
   private var resourceTypes = mutableMapOf<String, TypeSpec.Builder>()

@@ -1,10 +1,10 @@
 package butterknife.plugin
 
 import com.google.common.truth.Truth.assertThat
+import java.io.File
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
-import java.io.File
 
 class BuildFilesRule(private val root: File) : TestRule {
     override fun apply(base: Statement, description: Description): Statement {

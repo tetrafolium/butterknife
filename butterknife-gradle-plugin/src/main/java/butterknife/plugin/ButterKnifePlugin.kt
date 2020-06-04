@@ -10,12 +10,12 @@ import com.android.build.gradle.api.BaseVariant
 import com.android.build.gradle.internal.res.GenerateLibraryRFileTask
 import com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask
 import groovy.util.XmlSlurper
+import java.util.concurrent.atomic.AtomicBoolean
+import kotlin.reflect.KClass
 import org.gradle.api.DomainObjectSet
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionContainer
-import java.util.concurrent.atomic.AtomicBoolean
-import kotlin.reflect.KClass
 
 class ButterKnifePlugin : Plugin<Project> {
   override fun apply(project: Project) {
@@ -43,7 +43,7 @@ class ButterKnifePlugin : Plugin<Project> {
 
   // Parse the variant's main manifest file in order to get the package id which is used to create
   // R.java in the right place.
-  private fun getPackageName(variant : BaseVariant) : String {
+  private fun getPackageName(variant: BaseVariant): String {
     val slurper = XmlSlurper(false, false)
     val list = variant.sourceSets.map { it.manifestFile }
 
