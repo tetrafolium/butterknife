@@ -34,15 +34,15 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
     setter = "setOnLongClickListener",
     type = "android.view.View.OnLongClickListener",
     method = @ListenerMethod(
-        name = "onLongClick",
-        parameters = {
-            "android.view.View"
-        },
-        returnType = "boolean",
-        defaultReturn = "true"
-    )
+                 name = "onLongClick",
+parameters = {
+    "android.view.View"
+},
+returnType = "boolean",
+defaultReturn = "true"
+             )
 )
 public @interface OnLongClick {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 }

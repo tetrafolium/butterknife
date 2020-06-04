@@ -42,34 +42,34 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
     callbacks = OnItemSelected.Callback.class
 )
 public @interface OnItemSelected {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 
-  /** Listener callback to which the method will be bound. */
-  Callback callback() default Callback.ITEM_SELECTED;
+    /** Listener callback to which the method will be bound. */
+    Callback callback() default Callback.ITEM_SELECTED;
 
-  /** {@link OnItemSelectedListener} callback methods. */
-  enum Callback {
-    /**
-     * {@link OnItemSelectedListener#onItemSelected(android.widget.AdapterView, android.view.View,
-     * int, long)}
-     */
-    @ListenerMethod(
-        name = "onItemSelected",
+    /** {@link OnItemSelectedListener} callback methods. */
+    enum Callback {
+        /**
+         * {@link OnItemSelectedListener#onItemSelected(android.widget.AdapterView, android.view.View,
+         * int, long)}
+         */
+        @ListenerMethod(
+            name = "onItemSelected",
         parameters = {
             "android.widget.AdapterView<?>",
             "android.view.View",
             "int",
             "long"
         }
-    )
-    ITEM_SELECTED,
+        )
+        ITEM_SELECTED,
 
-    /** {@link OnItemSelectedListener#onNothingSelected(android.widget.AdapterView)} */
-    @ListenerMethod(
-        name = "onNothingSelected",
-        parameters = "android.widget.AdapterView<?>"
-    )
-    NOTHING_SELECTED
-  }
+        /** {@link OnItemSelectedListener#onNothingSelected(android.widget.AdapterView)} */
+        @ListenerMethod(
+            name = "onNothingSelected",
+            parameters = "android.widget.AdapterView<?>"
+        )
+        NOTHING_SELECTED
+    }
 }

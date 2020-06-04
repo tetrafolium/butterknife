@@ -10,15 +10,15 @@ import static android.R.color.darker_gray;
 
 public class G extends E {
 
-  @BindColor(darker_gray) @ColorInt int grayColor;
-  @BindView(android.R.id.button2) View button2;
+    @BindColor(darker_gray) @ColorInt int grayColor;
+    @BindView(android.R.id.button2) View button2;
 
-  public G(View view) {
-    super(view);
-    ButterKnife.bind(this, view);
-  }
+    public G(View view) {
+        super(view);
+        ButterKnife.bind(this, view);
+    }
 
-  @OnClick(android.R.id.content) public void onClick() {
+    @OnClick(android.R.id.content) public void onClick() {
 
-  }
+    }
 }

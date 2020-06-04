@@ -41,43 +41,43 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
     callbacks = OnTextChanged.Callback.class
 )
 public @interface OnTextChanged {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 
-  /** Listener callback to which the method will be bound. */
-  Callback callback() default Callback.TEXT_CHANGED;
+    /** Listener callback to which the method will be bound. */
+    Callback callback() default Callback.TEXT_CHANGED;
 
-  /** {@link TextWatcher} callback methods. */
-  enum Callback {
-    /** {@link TextWatcher#onTextChanged(CharSequence, int, int, int)} */
-    @ListenerMethod(
-        name = "onTextChanged",
+    /** {@link TextWatcher} callback methods. */
+    enum Callback {
+        /** {@link TextWatcher#onTextChanged(CharSequence, int, int, int)} */
+        @ListenerMethod(
+            name = "onTextChanged",
         parameters = {
             "java.lang.CharSequence",
             "int",
             "int",
             "int"
         }
-    )
-    TEXT_CHANGED,
+        )
+        TEXT_CHANGED,
 
-    /** {@link TextWatcher#beforeTextChanged(CharSequence, int, int, int)} */
-    @ListenerMethod(
-        name = "beforeTextChanged",
+        /** {@link TextWatcher#beforeTextChanged(CharSequence, int, int, int)} */
+        @ListenerMethod(
+            name = "beforeTextChanged",
         parameters = {
             "java.lang.CharSequence",
             "int",
             "int",
             "int"
         }
-    )
-    BEFORE_TEXT_CHANGED,
+        )
+        BEFORE_TEXT_CHANGED,
 
-    /** {@link TextWatcher#afterTextChanged(android.text.Editable)} */
-    @ListenerMethod(
-        name = "afterTextChanged",
-        parameters = "android.text.Editable"
-    )
-    AFTER_TEXT_CHANGED,
-  }
+        /** {@link TextWatcher#afterTextChanged(android.text.Editable)} */
+        @ListenerMethod(
+            name = "afterTextChanged",
+            parameters = "android.text.Editable"
+        )
+        AFTER_TEXT_CHANGED,
+    }
 }

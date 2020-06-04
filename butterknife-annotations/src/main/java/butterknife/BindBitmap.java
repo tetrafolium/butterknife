@@ -17,6 +17,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindBitmap {
-  /** Drawable resource ID from which the {@link Bitmap} will be created. */
-  @DrawableRes int value();
+    /** Drawable resource ID from which the {@link Bitmap} will be created. */
+    @DrawableRes int value();
 }

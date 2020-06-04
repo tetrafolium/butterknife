@@ -20,6 +20,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindFloat {
-  /** Float resource ID to which the field will be bound. */
-  @DimenRes int value();
+    /** Float resource ID to which the field will be bound. */
+    @DimenRes int value();
 }

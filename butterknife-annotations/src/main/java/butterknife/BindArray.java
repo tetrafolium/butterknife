@@ -33,6 +33,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Retention(RUNTIME) @Target(FIELD)
 public @interface BindArray {
-  /** Array resource ID to which the field will be bound. */
-  @ArrayRes int value();
+    /** Array resource ID to which the field will be bound. */
+    @ArrayRes int value();
 }

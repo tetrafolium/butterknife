@@ -17,6 +17,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Retention(RUNTIME) @Target(FIELD)
 public @interface BindViews {
-  /** View IDs to which the field will be bound. */
-  @IdRes int[] value();
+    /** View IDs to which the field will be bound. */
+    @IdRes int[] value();
 }

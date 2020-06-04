@@ -31,11 +31,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
     setter = "setOnClickListener",
     type = "butterknife.internal.DebouncingOnClickListener",
     method = @ListenerMethod(
-        name = "doClick",
-        parameters = "android.view.View"
-    )
+                 name = "doClick",
+                 parameters = "android.view.View"
+             )
 )
 public @interface OnClick {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 }

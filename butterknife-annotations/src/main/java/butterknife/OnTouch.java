@@ -34,16 +34,16 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
     setter = "setOnTouchListener",
     type = "android.view.View.OnTouchListener",
     method = @ListenerMethod(
-        name = "onTouch",
-        parameters = {
-            "android.view.View",
-            "android.view.MotionEvent"
-        },
-        returnType = "boolean",
-        defaultReturn = "true"
-    )
+                 name = "onTouch",
+parameters = {
+    "android.view.View",
+    "android.view.MotionEvent"
+},
+returnType = "boolean",
+defaultReturn = "true"
+             )
 )
 public @interface OnTouch {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 }

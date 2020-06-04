@@ -37,37 +37,37 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
     callbacks = OnPageChange.Callback.class
 )
 public @interface OnPageChange {
-  /** View IDs to which the method will be bound. */
-  @IdRes int[] value() default { View.NO_ID };
+    /** View IDs to which the method will be bound. */
+    @IdRes int[] value() default { View.NO_ID };
 
-  /** Listener callback to which the method will be bound. */
-  Callback callback() default Callback.PAGE_SELECTED;
+    /** Listener callback to which the method will be bound. */
+    Callback callback() default Callback.PAGE_SELECTED;
 
-  /** {@code ViewPager.OnPageChangeListener} callback methods. */
-  enum Callback {
-    /** {@code onPageSelected(int)} */
-    @ListenerMethod(
-        name = "onPageSelected",
-        parameters = "int"
-    )
-    PAGE_SELECTED,
+    /** {@code ViewPager.OnPageChangeListener} callback methods. */
+    enum Callback {
+        /** {@code onPageSelected(int)} */
+        @ListenerMethod(
+            name = "onPageSelected",
+            parameters = "int"
+        )
+        PAGE_SELECTED,
 
-    /** {@code onPageScrolled(int, float, int)} */
-    @ListenerMethod(
-        name = "onPageScrolled",
+        /** {@code onPageScrolled(int, float, int)} */
+        @ListenerMethod(
+            name = "onPageScrolled",
         parameters = {
             "int",
             "float",
             "int"
         }
-    )
-    PAGE_SCROLLED,
+        )
+        PAGE_SCROLLED,
 
-    /** {@code onPageScrollStateChanged(int)} */
-    @ListenerMethod(
-        name = "onPageScrollStateChanged",
-        parameters = "int"
-    )
-    PAGE_SCROLL_STATE_CHANGED,
-  }
+        /** {@code onPageScrollStateChanged(int)} */
+        @ListenerMethod(
+            name = "onPageScrollStateChanged",
+            parameters = "int"
+        )
+        PAGE_SCROLL_STATE_CHANGED,
+    }
 }

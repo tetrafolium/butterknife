@@ -18,6 +18,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindDimen {
-  /** Dimension resource ID to which the field will be bound. */
-  @DimenRes int value();
+    /** Dimension resource ID to which the field will be bound. */
+    @DimenRes int value();
 }

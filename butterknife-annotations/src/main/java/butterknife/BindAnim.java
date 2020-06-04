@@ -16,6 +16,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(FIELD)
 @Retention(RUNTIME)
 public @interface BindAnim {
-  /** Animation resource ID to which the field will be bound. */
-  @AnimRes int value();
+    /** Animation resource ID to which the field will be bound. */
+    @AnimRes int value();
 }
