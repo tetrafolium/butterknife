@@ -738,7 +738,7 @@ public final class ButterKnife {
       Object value = tryInvoke(
           method, target, argumentTransformer.transform(v, actionId, event));
       // noinspection SimplifiableConditionalExpression
-      return propagateReturn ? (boolean)value : true;
+      return !(propagateReturn) || (boolean)value;
     });
 
     return new ListenerUnbinder<>(views, ON_EDITOR_ACTION);
@@ -817,7 +817,7 @@ public final class ButterKnife {
               method, target,
               argumentTransformer.transform(parent, view, position, id));
           // noinspection SimplifiableConditionalExpression
-          return propagateReturn ? (boolean)value : true;
+          return !(propagateReturn) || (boolean)value;
         });
 
     return new ListenerUnbinder<>(views, ON_ITEM_LONG_CLICK);
@@ -843,7 +843,7 @@ public final class ButterKnife {
       Object returnValue =
           tryInvoke(method, target, argumentTransformer.transform(v));
       // noinspection SimplifiableConditionalExpression
-      return propagateReturn ? (boolean)returnValue : true;
+      return !(propagateReturn) || (boolean)returnValue;
     });
 
     return new ListenerUnbinder<>(views, ON_LONG_CLICK);
@@ -987,7 +987,7 @@ public final class ButterKnife {
       Object returnValue =
           tryInvoke(method, target, argumentTransformer.transform(v));
       // noinspection SimplifiableConditionalExpression
-      return propagateReturn ? (boolean)returnValue : true;
+      return !(propagateReturn) || (boolean)returnValue;
     });
 
     return new ListenerUnbinder<>(views, ON_TOUCH);
