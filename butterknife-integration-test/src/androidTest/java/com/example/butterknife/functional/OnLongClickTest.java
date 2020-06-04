@@ -192,7 +192,7 @@ public final class OnLongClickTest {
     }
 
     static final class ArgumentCast {
-        interface MyInterface {}
+        interface MyInterface { }
 
         View last;
 

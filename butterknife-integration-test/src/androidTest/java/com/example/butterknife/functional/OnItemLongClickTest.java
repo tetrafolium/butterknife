@@ -212,7 +212,7 @@ public final class OnItemLongClickTest {
     }
 
     static final class ArgumentCast {
-        interface MyInterface {}
+        interface MyInterface { }
 
         View last;
 

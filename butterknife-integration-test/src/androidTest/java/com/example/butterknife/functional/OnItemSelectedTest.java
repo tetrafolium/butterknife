@@ -311,7 +311,7 @@ public final class OnItemSelectedTest {
     }
 
     static final class ArgumentCast {
-        interface MyInterface {}
+        interface MyInterface { }
 
         View last;
 
