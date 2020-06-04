@@ -7,9 +7,7 @@ import butterknife.ButterKnife;
 
 public class A {
 
-    @BindColor(android.R.color.black) @ColorInt int blackColor;
+  @BindColor(android.R.color.black) @ColorInt int blackColor;
 
-    public A(View view) {
-        ButterKnife.bind(this, view);
-    }
+  public A(View view) { ButterKnife.bind(this, view); }
 }
